@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/lvFarmerApp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logo"
+            android:textSize="20sp"
+            android:textColor="@color/red"
+            android:fontFamily="@font/dmsans_semibold"/>
+
+    </LinearLayout>
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fillViewport="true"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvFarmerApp">-->
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvDashboard"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="25dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_red"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--       app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/material_symbols_dashboard" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="Dashboard"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/material_symbols_dashboard"-->
+<!--            android:visibility="invisible" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvPayment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvDashboard">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/tdesign_money__1_" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="LatestPayment"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvPassbook"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvPayment">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/tabler_book" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="Passbook"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvReport"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="21dp"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvPassbook">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/carbon_report" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="Report"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvNotificatiob"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvReport">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/octicon_bell_24__1_" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="Notification"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvShareHistory"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvNotificatiob">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/ic_baseline_history" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="ShareHistory"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvIndentHistory"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvShareHistory">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/maki_arrow" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="Indent History"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvNews"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvIndentHistory">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/tabler_news" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="News"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvSettings"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvNews">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/uil_setting" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="Settings"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvMyProfile"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvSettings">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/bx_user" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="My Profile"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="12sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvAboutUs"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="21dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/bg_nav_white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvMyProfile">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:src="@drawable/mdi_about_circle_outline__2_" /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_medium"-->
+<!--            android:text="About Us"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/lvLogout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lvAboutUs">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            /> &lt;!&ndash; Add your account icon here &ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:fontFamily="@font/dmsans_semibold"-->
+<!--            android:text="Logout"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            android:visibility="gone" />-->
+<!--    </LinearLayout>-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </ScrollView>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

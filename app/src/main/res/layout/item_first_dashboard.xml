@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/lvMilkDelevery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:elevation="3dp"
+            android:background="@drawable/bg_button_radius">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Milk Supply Day 40"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:layout_marginBottom="15dp"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/dmsans_medium"
+                android:textColor="@color/text_black"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:elevation="3dp"
+            android:background="@drawable/bg_button_radius">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Milk Supply Quantity"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/dmsans_medium"
+                android:textColor="@color/text_black"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

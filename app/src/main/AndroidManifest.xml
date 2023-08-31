@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FarmerApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".core.CoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.drawerItem.DetailedPaymentActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".activity.drawerItem.NotificationActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".activity.drawerItem.IndentHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.drawerItem.ShareHistory"
+            android:exported="false" />
+        <activity
+            android:name=".activity.drawerItem.AboutUsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_about_us"
+            android:theme="@style/Theme.FarmerApp.NoActionBar" />
+        <activity
+            android:name=".activity.drawerItem.MyProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.drawerItem.NewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.drawerItem.ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.drawerItem.PassbookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.drawerItem.PaymentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.OtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false">
+        </activity>
+    </application>
+
+</manifest>

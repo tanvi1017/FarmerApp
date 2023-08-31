@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout class="androidx.appcompat.app.AlertController$RecycleListView" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:layout_marginHorizontal="20dp"
+    android:background="@drawable/bg_edit_radius">
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="45dp"
+        android:src="@drawable/bi_exclamation"
+        android:layout_alignParentStart="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:fontFamily="@font/dmsans_medium"
+        android:textColor="@color/white"
+        android:text="Selector unKnown returned the root state wise"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="45dp"
+        android:src="@drawable/entypo_cross"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

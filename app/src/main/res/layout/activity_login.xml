@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+    <include
+        android:id="@+id/tb"
+        layout="@layout/base_toolbar" />
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/ivLogo"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:visibility="visible"
+           android:layout_marginHorizontal="45dp"
+           android:layout_marginVertical="12dp"
+           android:src="@drawable/iv_forgot_pass"
+           app:layout_constraintTop_toBottomOf="@+id/tb"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHeight_percent="0.25"
+           app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        android:layout_marginTop="85dp">
+        <TextView
+            android:id="@+id/tvPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="45dp"
+            android:text="Enter Number"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"/>
+        <EditText
+            android:id="@+id/edtPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            android:hint="Enter Number"
+            android:textColorHint="@color/grey"
+            android:fontFamily="@font/dmsans_regular"
+            android:drawableStart="@drawable/baseline_phone"
+            android:background="@drawable/bg_edit_radius"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber"/>
+<!--        <TextView-->
+<!--            android:id="@+id/tvSentOtp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="Sent Otp"-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="12sp"-->
+<!--            android:fontFamily="@font/dmsans_semibold"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:layout_marginHorizontal="70dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/edtPhoneNumber"-->
+<!--            android:background="@drawable/bg_button_radius"/>-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSentOtp"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_button_radius"
+            android:fontFamily="@font/dmsans_semibold"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:text="Send OTP"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            app:fontFamily="@font/dmsans_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPhoneNumber"
+            />
+
+
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvLogin"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="SignUp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:textSize="20sp"-->
+<!--        android:fontFamily="@font/dmsans_bold"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvPhoneNumber"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="15dp"-->
+<!--        android:layout_marginTop="35dp"-->
+<!--        android:text="Enter Number"-->
+<!--        android:textSize="12sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tvLogin"/>-->
+<!--    <EditText-->
+<!--        android:id="@+id/edtPhoneNumber"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="45dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginHorizontal="15dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:textSize="11sp"-->
+<!--        android:hint="Enter Number"-->
+<!--        android:fontFamily="@font/dmsans_regular"-->
+<!--        android:drawableStart="@drawable/baseline_local_phone_24"-->
+<!--        android:background="@drawable/bg_edttext"-->
+<!--        android:paddingStart="10dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvSentOtp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:text="Sent Otp"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="12sp"-->
+<!--        android:fontFamily="@font/dmsans_medium"-->
+<!--        android:textColor="@color/white"-->
+<!--       android:layout_marginHorizontal="50dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/edtPhoneNumber"-->
+<!--        android:background="@drawable/bg_buttons"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

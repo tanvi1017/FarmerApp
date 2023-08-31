@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.PassbookFragment">
+    <TextView
+        android:id="@+id/tvDateFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Date From"
+        android:textSize="12sp"
+        android:fontFamily="@font/dmsans_semibold"
+        android:textColor="@color/red"
+       app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/tvDateUpto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Date Upto"
+        android:textSize="12sp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/dmsans_semibold"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDateFrom"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtDateFrom"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:elevation="3dp"
+        android:hint="DateFrom"
+        android:layout_marginTop="3dp"
+        android:singleLine="true"
+        android:background="@drawable/bg_button_radius"
+        android:textColor="@color/black"
+        android:textColorHint="@color/red"
+        android:textSize="12sp"
+        android:paddingStart="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tvDateFrom"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateFrom" />
+
+    <ImageView
+        android:id="@+id/ivDateFrom"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:padding="4dp"
+        android:elevation="5dp"
+        android:src="@drawable/date_range_24"
+        app:layout_constraintBottom_toBottomOf="@+id/edtDateFrom"
+        app:layout_constraintEnd_toEndOf="@+id/edtDateFrom"
+        app:layout_constraintTop_toTopOf="@+id/edtDateFrom" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtDateUpto"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:elevation="3dp"
+        android:hint="DateUpto"
+        android:layout_marginTop="3dp"
+        android:singleLine="true"
+        android:paddingStart="8dp"
+        android:background="@drawable/bg_button_radius"
+        android:textColor="@color/black"
+        android:textColorHint="@color/red"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tvDateUpto"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateUpto" />
+
+    <ImageView
+        android:id="@+id/ivDateUpto"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:padding="4dp"
+        android:elevation="5dp"
+        android:src="@drawable/date_range_24"
+        app:layout_constraintBottom_toBottomOf="@+id/edtDateUpto"
+        app:layout_constraintEnd_toEndOf="@+id/edtDateUpto"
+        app:layout_constraintTop_toTopOf="@+id/edtDateUpto" />
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/charm_search"
+        app:layout_constraintTop_toTopOf="@+id/edtDateUpto"
+        app:layout_constraintBottom_toBottomOf="@+id/edtDateUpto"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
