@@ -153,6 +153,14 @@ class CoreActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                         binding.tvDashboard.text = "Report"
                     }
                 }
+                R.id.aboutUsFragment -> {
+                    binding.myToolbar.apply {
+                        setBackgroundColor(
+                            ContextCompat.getColor(this@CoreActivity, R.color.red)
+                        )
+                        binding.tvDashboard.text = "AboutUs"
+                    }
+                }
 
                 else -> {
                     binding.myToolbar.setBackgroundColor(
