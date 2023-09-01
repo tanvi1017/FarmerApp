@@ -10,23 +10,23 @@
         android:id="@+id/latestPaymentFragment"
         android:title="LatestPayment"
         android:icon="@drawable/tdesign_money__1_"/>
-<!--    <item-->
-<!--        android:id="@+id/nav_passbook"-->
-<!--        android:title="Passbook"-->
-<!--        android:icon="@drawable/tabler_book"/>-->
+    <item
+        android:id="@+id/passbookFragment"
+        android:title="Passbook"
+        android:icon="@drawable/tabler_book"/>
 
-<!--    <item-->
-<!--        android:id="@+id/nav_Report"-->
-<!--        android:title="Report"-->
-<!--        android:icon="@drawable/carbon_report"-->
-<!--        />-->
+    <item
+        android:id="@+id/reportFragment"
+        android:title="Report"
+        android:icon="@drawable/carbon_report"
+        />
     <item
         android:id="@+id/notificationFragment"
         android:title="Notification"
         android:icon="@drawable/octicon_bell_24__1_"
         android:iconTint="@color/red"/>
     <item
-        android:id="@+id/nav_sharehistory"
+        android:id="@+id/shareFragment"
         android:title="ShareHistory"
         android:icon="@drawable/ic_baseline_history"
         />

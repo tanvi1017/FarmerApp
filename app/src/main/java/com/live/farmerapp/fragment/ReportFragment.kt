@@ -12,12 +12,8 @@ import com.live.farmerapp.databinding.FragmentReportBinding
 class ReportFragment : BaseFragment<FragmentReportBinding>() {
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun inflateBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentReportBinding {

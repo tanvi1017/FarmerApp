@@ -52,21 +52,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
-        navView.setNavigationItemSelectedListener(this)
-        val menu = navView.menu
-//        val redColor = ContextCompat.getColor(this, R.color.red)
-//        val logoutMenuItem = menu.findItem(R.id.nav_logout)
-//        val largeSizeSpan = RelativeSizeSpan(1.3f)
-//        val spannableTitle = SpannableString(logoutMenuItem.title)
-//        spannableTitle.setSpan(largeSizeSpan, 0, spannableTitle.length, 0)
-//        spannableTitle.setSpan(ForegroundColorSpan(redColor), 0, spannableTitle.length, 0)
-//        logoutMenuItem.title = spannableTitle// Replace with your color resource
-//        for (i in 0 until menu.size()) {
-//            val menuItem = menu.getItem(i)
-//            val icon = menuItem.icon
-//            icon?.setTint(redColor)
-//            menuItem.icon = icon
-//        }
+
     }
 
     private fun setLogOutDialog() {

@@ -33,14 +33,14 @@ class PassbookActivity : AppCompatActivity() {
 //            pickUpDate()
 //        }
 //    }
-    private fun onClicks() {
-        binding.ivDateFrom.setOnClickListener {
-            pickUpDate(binding.edtDateFrom)
-        }
-        binding.ivDateUpto.setOnClickListener {
-            pickUpDate(binding.edtDateUpto)
-        }
+private fun onClicks() {
+    binding.ivDateFrom.setOnClickListener {
+        pickUpDate(binding.edtDateFrom)
     }
+    binding.ivDateUpto.setOnClickListener {
+        pickUpDate(binding.edtDateUpto)
+    }
+}
 
     private fun pickUpDate(editText: EditText) {
         val today = Calendar.getInstance()

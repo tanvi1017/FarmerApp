@@ -29,10 +29,18 @@
         tools:targetApi="31">
         <activity
             android:name=".core.CoreActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.drawerItem.DetailedPaymentActivity"
-            android:exported="false"></activity>
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".activity.drawerItem.NotificationActivity"
             android:exported="true">
@@ -43,11 +51,11 @@
         <activity
             android:name=".activity.drawerItem.ShareHistory"
             android:exported="false" />
-        <activity
-            android:name=".activity.drawerItem.AboutUsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_about_us"
-            android:theme="@style/Theme.FarmerApp.NoActionBar" />
+<!--        <activity-->
+<!--            android:name="activ"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_about_us"-->
+<!--            android:theme="@style/Theme.FarmerApp.NoActionBar" />-->
         <activity
             android:name=".activity.drawerItem.MyProfileActivity"
             android:exported="false" />
@@ -69,11 +77,7 @@
         <activity
             android:name=".activity.LoginActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.MainActivity"
