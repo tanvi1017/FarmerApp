@@ -20,12 +20,13 @@ class AboutUsFragment : BaseFragment<FragmentAboutUsBinding>() {
     private lateinit var  viewModel: AboutUsViewModel
     override fun inflateBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentAboutUsBinding {
         return FragmentAboutUsBinding.inflate(layoutInflater)
-        viewModel = ViewModelProvider(requireActivity())[AboutUsViewModel::class.java]
 }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(requireActivity())[AboutUsViewModel::class.java]
+
         callApi()
-        initObserver()
+        //initObserver()
 
     }
 

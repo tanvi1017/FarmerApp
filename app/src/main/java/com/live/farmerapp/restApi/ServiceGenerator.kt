@@ -2,7 +2,7 @@ package com.live.farmerapp.restApi
 
 import android.util.Log
 import com.google.gson.GsonBuilder
-import com.live.countrysearch.util.Constant
+import com.live.farmerapp.util.Constant
 import okhttp3.*
 import java.util.concurrent.TimeUnit
 import okhttp3.logging.HttpLoggingInterceptor

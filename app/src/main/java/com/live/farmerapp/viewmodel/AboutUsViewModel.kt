@@ -1,5 +1,6 @@
 package com.live.farmerapp.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +9,7 @@ import com.live.countrysearch.util.validator.NetworkResult
 import com.live.farmerapp.model.AboutUsResponse
 import com.live.farmerapp.others.MyApplication
 import com.live.farmerapp.others.Utils
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
@@ -17,7 +19,7 @@ class AboutUsViewModel:ViewModel() {
 
     fun callAboutUsApi(map: HashMap<String, String>) {
         if (Utils.isNetworkConnected(MyApplication.getnstance())) {
-            viewModelScope.launch {
+            viewModelScope.launch(Dispatchers.IO) {
                 val response = restApiInterface.aboutUs(map)
                 fetchAboutUs.postValue(handleLoginResponse(response))
             }
@@ -25,8 +27,15 @@ class AboutUsViewModel:ViewModel() {
     }
     private fun handleLoginResponse(response: Response<AboutUsResponse>): NetworkResult<AboutUsResponse>? {
         return when {
-            response.isSuccessful -> response.body()?.let { NetworkResult.Success(it) }
-            else ->  NetworkResult.Error(response.message())
+            response.isSuccessful -> response.body()?.let {
+                val response = "messsge ${it.message}, status ${it.status}, ${it.data.email}"
+            Log.v("AboutUsResponse", response)
+                NetworkResult.Success(it)
+            }
+            else ->  {
+                Log.v("AboutUsResponse", "error")
+                NetworkResult.Error(response.message())
+            }
         }
     }
 }
