@@ -1,0 +1,259 @@
+package com.live.countrysearch.util
+
+import android.app.Activity
+import android.app.Dialog
+import android.content.ContentResolver
+import android.content.Context
+import android.content.Intent
+import android.content.res.Resources
+import android.graphics.*
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.RoundRectShape
+import android.net.Uri
+import android.os.*
+import android.os.Build.VERSION.SDK_INT
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
+import android.util.TypedValue
+import android.view.*
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
+import java.io.*
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.random.Random
+
+
+fun View.show(){
+    visibility = View.VISIBLE
+}
+
+fun View.hide(){
+    visibility = View.GONE
+}
+fun View.shouldShow(shouldShow:Boolean = true){
+    visibility = if(shouldShow) View.VISIBLE else View.GONE
+}
+fun delay(delayMillis: Long, callback: () -> Unit) {
+    val handler = Handler(Looper.getMainLooper())
+    handler.postDelayed(callback, delayMillis)
+}
+inline fun <reified T : Serializable> Bundle.serializable(key: String): T? = when {
+    SDK_INT >= Build.VERSION_CODES.TIRAMISU -> getSerializable(key, T::class.java)
+    else -> @Suppress("DEPRECATION") getSerializable(key) as? T
+}
+
+inline fun <reified T : Serializable> Intent.serializable(key: String): T? = when {
+    SDK_INT >= Build.VERSION_CODES.TIRAMISU -> getSerializableExtra(key, T::class.java)
+    else -> @Suppress("DEPRECATION") getSerializableExtra(key) as? T
+}
+
+fun View.setColoredCard(
+    width: Int = ViewGroup.LayoutParams.MATCH_PARENT,
+    height: Int = 50.toPixel(),
+    cornerRadius: Float
+): View {
+    val shapeDrawable = ShapeDrawable()
+    shapeDrawable.shape = RoundRectShape(
+        floatArrayOf(cornerRadius, cornerRadius, cornerRadius, cornerRadius,
+            cornerRadius, cornerRadius, cornerRadius, cornerRadius),
+        null,
+        null
+    )
+
+    val cardView = View(context)
+    cardView.background = shapeDrawable
+
+    val layoutParams = ViewGroup.LayoutParams(width, height)
+    cardView.layoutParams = layoutParams
+
+    val margin = 5//resources.getDimensionPixelSize(R.dimen.card_view_margin) // Adjust margin as desired
+    val marginLayoutParams = ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height)
+    marginLayoutParams.setMargins(margin, margin, margin, margin)
+    cardView.layoutParams = marginLayoutParams
+
+    return cardView
+}
+
+fun Int.toPixel(): Int {
+    return dpToPixels(this.toFloat())
+}
+fun pixelToDp(pixel: Int): Float {
+    val r = Resources.getSystem()
+    return pixel.toFloat() / r.displayMetrics.density
+}
+fun dpToPixels(dp: Float): Int {
+    val r = Resources.getSystem()
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.displayMetrics).toInt()
+}
+
+fun Random.randomColor(): Int {
+    val alpha = 255 // You can customize the alpha value if needed
+    val red = Random.nextInt(256)
+    val green = Random.nextInt(256)
+    val blue = Random.nextInt(256)
+    return Color.argb(alpha, red, green, blue)
+}
+
+fun formatTimestampToDate(timestamp: Long): String {
+    val date = Date(timestamp)
+    val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+    return dateFormat.format(date)
+}
+
+
+fun View.makeToast(message:String){
+    Toast.makeText(this.context,message, Toast.LENGTH_LONG).show()
+}
+fun isEmailValid(email: String): Boolean {
+    val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+    return email.matches(emailPattern.toRegex())
+}
+
+/**
+ * Here in regex - "^[+]?[0-9]{10,13}$" 10, 13 are the minimun and max number of charcters allowed with
+ */
+fun isPhoneNumberValid(phoneNumber: String): Boolean {
+    val phonePattern = "^[+]?[0-9]{10,13}$"
+    return phoneNumber.matches(phonePattern.toRegex())
+}
+
+fun isPasswordValid(password: String): Boolean {
+    val passwordPattern = "^(?=.*\\d)(?=.*[!@#\$%^&*])(?=.*[a-zA-Z]).{8,}$"
+    return password.matches(passwordPattern.toRegex())
+}
+fun Boolean.toggle():Boolean{
+    return !this
+}
+fun DialogFragment.setWidthPercent(percentage: Int) {
+    val percent = percentage.toFloat() / 100
+    val dm = Resources.getSystem().displayMetrics
+    val rect = dm.run { Rect(0, 0, widthPixels, heightPixels) }
+    val percentWidth = rect.width() * percent
+    dialog?.window?.setLayout(percentWidth.toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
+}
+fun DialogFragment.setFullScreen() {
+    dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+}
+fun Context.toast(msg:String){
+    Toast.makeText(this,msg,Toast.LENGTH_LONG).show()
+}
+fun Fragment.toast(msg:String){
+    Toast.makeText(this.requireContext(),msg,Toast.LENGTH_LONG).show()
+}
+fun textWatcherEnable(editText: EditText, charLimit:Int){
+    editText.addTextChangedListener(object : TextWatcher {
+
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+            // This method is called before the text is changed
+        }
+
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+            // This method is called when the text is changing
+        }
+
+        override fun afterTextChanged(s: Editable) {
+            if ((s?.length ?: 0) > charLimit) {
+                editText.setText(s?.subSequence(0, charLimit)) // Truncate the text to 10 characters
+                editText.setSelection(charLimit) // Set the cursor position to the end
+            }
+        }
+    })
+
+}
+
+fun View.setCircularView(color: Int) {
+    val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.FILL
+        this.color = color
+    }
+
+    this.setWillNotDraw(false)
+
+    this.post {
+        val diameter = this.width.coerceAtMost(this.height).toFloat()
+        this.layoutParams.width = diameter.toInt()
+        this.layoutParams.height = diameter.toInt()
+        this.requestLayout()
+        this.invalidate()
+
+        val bitmap = Bitmap.createBitmap(this.width, this.height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        canvas.drawCircle(diameter / 2, diameter / 2, diameter / 2, paint)
+        this.background = BitmapDrawable(resources, bitmap)
+    }
+}
+
+
+fun mLog(msg: String, tag: String = "TAAAG") {
+    Log.v(tag, msg)
+}
+
+//fun setLogOutDialog(context: Activity, isTokenExpired: Boolean = false) {
+//    val reviewDialog = Dialog(context)
+//    reviewDialog.apply {
+//        // set window properties
+//        window?.apply {
+//            setLayout(
+//                WindowManager.LayoutParams.MATCH_PARENT,
+//                WindowManager.LayoutParams.WRAP_CONTENT
+//            )
+//            setGravity(Gravity.CENTER)
+//            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//        }
+//        setCancelable(true)
+//        setCanceledOnTouchOutside(true)
+//        requestWindowFeature(Window.FEATURE_NO_TITLE)
+//        setContentView(R.layout.set_exit)
+//
+//
+//        // set listeners
+//        findViewById<TextView>(R.id.btnYes).setOnClickListener {
+//            PreferenceFile.clearPreference(context)
+//            context.startActivity(Intent(context, SplashActivity::class.java))
+//            reviewDialog.dismiss()
+//        }
+//        findViewById<TextView>(R.id.btnNo).setOnClickListener {
+//            reviewDialog.dismiss()
+//        }
+//        if (isTokenExpired) {
+//            findViewById<TextView>(R.id.tvInstruction).text =
+//                context.getText(R.string.session_expired)
+//            findViewById<TextView>(R.id.btnYes).text = context.getText(R.string.ok)
+//            findViewById<TextView>(R.id.btnNo).visibility = View.GONE
+//        }
+//        show()
+//    }
+//}
+
+
+fun uriToFile(context: Context, uri: Uri): File? {
+    val contentResolver: ContentResolver = context.contentResolver
+    val inputStream: InputStream?
+    val outputFile: File?
+    try {
+        inputStream = contentResolver.openInputStream(uri)
+        val file = File(context.cacheDir, "temp_file")
+        val outputStream = FileOutputStream(file)
+        if (inputStream != null) {
+            val buf = ByteArray(1024)
+            var len: Int
+            while (inputStream.read(buf).also { len = it } > 0) {
+                outputStream.write(buf, 0, len)
+            }
+            inputStream.close()
+            outputStream.close()
+            outputFile = file
+            return outputFile
+        }
+    } catch (e: IOException) {
+        e.printStackTrace()
+    }
+    return null
+}

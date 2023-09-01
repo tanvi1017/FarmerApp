@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.live.farmerapp.R
+import com.live.farmerapp.activity.util.hide
 import com.live.farmerapp.activity.util.show
 import com.live.farmerapp.databinding.ActivityLoginBinding
 
@@ -26,9 +27,10 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     private fun onClicks(){
-        binding.tb.toolbarTitle.apply {
-            show()
-            text="Login"
+        binding.tb.apply {
+            toolbarTitle. show()
+                toolbarTitle.text ="Login"
+            ivBack.hide()
         }
 
     }

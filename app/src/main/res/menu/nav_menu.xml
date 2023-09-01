@@ -4,27 +4,33 @@
     <item
         android:id="@+id/dashboardFragment"
         android:title="Dashboard"
-        android:icon="@drawable/material_symbols_dashboard"/>
+        android:icon="@drawable/material_symbols_dashboard"
+        android:layout="@layout/custome_menu_item"
+        />
 
     <item
         android:id="@+id/latestPaymentFragment"
         android:title="LatestPayment"
-        android:icon="@drawable/tdesign_money__1_"/>
+        android:icon="@drawable/tdesign_money__1_"
+      />
     <item
         android:id="@+id/passbookFragment"
         android:title="Passbook"
-        android:icon="@drawable/tabler_book"/>
+        android:icon="@drawable/tabler_book"
+    />
 
     <item
         android:id="@+id/reportFragment"
         android:title="Report"
         android:icon="@drawable/carbon_report"
+
         />
     <item
         android:id="@+id/notificationFragment"
         android:title="Notification"
         android:icon="@drawable/octicon_bell_24__1_"
-        android:iconTint="@color/red"/>
+        android:iconTint="@color/red"
+/>
     <item
         android:id="@+id/shareFragment"
         android:title="ShareHistory"
@@ -49,12 +55,11 @@
         android:icon="@drawable/bx_user"
         android:iconTint="@color/red"/>
     <item
-        android:id="@+id/nav_aboutUs"
+        android:id="@+id/aboutUsFragment"
         android:title="AboutUs"
         android:icon="@drawable/mdi_about_circle_outline__2_"/>
     <item
         android:id="@+id/nav_logout"
-        android:title="Logout"
-    />
+        android:title="Logout" />
 
 </menu>

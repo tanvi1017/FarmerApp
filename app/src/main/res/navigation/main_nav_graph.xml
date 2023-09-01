@@ -21,6 +21,12 @@
         android:name="com.live.farmerapp.fragment.NotificationFragment"
         android:label="fragment_otifications"
         tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.live.farmerapp.fragment.AboutUsFragment"
+        android:label="fragment_aboutUs"
+        tools:layout="@layout/fragment_about_us" />
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.live.farmerapp.fragment.HistoryFragment"
@@ -42,4 +48,7 @@
         android:label="fragment_share"
         tools:layout="@layout/fragment_share" />
 
+    <activity
+        android:id="@+id/login_activity"
+        android:name="com.live.farmerapp.activity.LoginActivity" />
 </navigation>

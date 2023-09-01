@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.AboutUsFragment">
+    <TextView
+        android:id="@+id/tvAboutUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Application"
+        android:textSize="16sp"
+        android:fontFamily="@font/dmsans_semibold"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="15dp"
+        android:textColor="@color/text_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/tvAboutUsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAboutUs"
+        android:layout_marginHorizontal="15dp"
+        android:textSize="12sp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/text_black"
+        android:fontFamily="@font/dmsans_medium"
+        android:text="something About Your Company As Per company Profile"/>
+    <TextView
+        android:id="@+id/tvAboutCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Application"
+        android:textSize="16sp"
+        android:fontFamily="@font/dmsans_semibold"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
+        android:textColor="@color/text_black"
+        app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/tvAboutUsDescription"/>
+    <TextView
+        android:id="@+id/tvAboutCompanyDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAboutCompany"
+        android:layout_marginHorizontal="15dp"
+        android:textSize="12sp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/text_black"
+        android:fontFamily="@font/dmsans_medium"
+        android:text="something About Your Company As Per company Profile"/>
+    <TextView
+        android:id="@+id/tvReach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reach Us"
+        android:textSize="15dp"
+        android:textColor="@color/text_black"
+        android:fontFamily="@font/dmsans_semibold"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAboutCompanyDescription"/>
+    <RelativeLayout
+        android:id="@+id/rvUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tvReach"
+        app:layout_constraintTop_toBottomOf="@+id/tvReach">
+        <ImageView
+            android:id="@+id/ivImageUrl"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:src="@drawable/baseline_language_24"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_black"
+            android:fontFamily="@font/dmsans_medium"
+           android:layout_toRightOf="@+id/ivImageUrl"
+            android:text="www.geeks for geeks"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tvReach"
+        app:layout_constraintTop_toBottomOf="@+id/rvUrl">
+        <ImageView
+            android:id="@+id/ivImageEmail"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:src="@drawable/baseline_email_24"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_black"
+            android:fontFamily="@font/dmsans_medium"
+            android:layout_toRightOf="@+id/ivImageEmail"
+            android:text="www.geeks for geeks"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tvReach"
+        app:layout_constraintTop_toBottomOf="@+id/rvEmail">
+    <ImageView
+        android:id="@+id/ivImagePhone"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:src="@drawable/phone_24"
+        android:layout_alignParentStart="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="12dp"
+        android:textSize="12sp"
+        android:textColor="@color/text_black"
+        android:fontFamily="@font/dmsans_medium"
+        android:layout_toRightOf="@+id/ivImagePhone"
+        android:text="www.geeks for geeks"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
