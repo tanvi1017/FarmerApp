@@ -28,13 +28,11 @@ object ServiceGenerator {
     private val builder = Retrofit.Builder()
         .baseUrl(Constant.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create(gson))
-//        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
     @JvmStatic
     fun <S> createService(serviceClass: Class<S>): S {
         val retrofit = getRetrofit()
         return retrofit.create(serviceClass)
     }
-
     @JvmStatic
     fun getRetrofit(): Retrofit {
         return builder.client(httpClient)

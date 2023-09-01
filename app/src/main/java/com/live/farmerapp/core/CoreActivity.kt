@@ -59,6 +59,11 @@ class CoreActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         spannableTitle.setSpan(largeSizeSpan, 0, spannableTitle.length, 0)
         spannableTitle.setSpan(ForegroundColorSpan(redColor), 0, spannableTitle.length, 0)
         logoutMenuItem.title = spannableTitle
+        logoutMenuItem.setOnMenuItemClickListener {
+            showLogoutConfirmationDialog()
+            return@setOnMenuItemClickListener true
+
+        }
         for (i in 0 until menu.size()) {
             val menuItem = menu.getItem(i)
             val icon = menuItem.icon
@@ -153,7 +158,25 @@ class CoreActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                         binding.tvDashboard.text = "Report"
                     }
                 }
-                R.id.aboutUsFragment -> {
+
+                R.id.aboutUsFragment-> {
+                    binding.myToolbar.apply {
+                        setBackgroundColor(
+                            ContextCompat.getColor(this@CoreActivity, R.color.red)
+                        )
+                        binding.tvDashboard.text = "AboutUs"
+                    }
+                }
+
+                R.id.settingsFragment -> {
+                    binding.myToolbar.apply {
+                        setBackgroundColor(
+                            ContextCompat.getColor(this@CoreActivity, R.color.red)
+                        )
+                        binding.tvDashboard.text = "Settings"
+                    }
+
+
                     binding.myToolbar.apply {
                         setBackgroundColor(
                             ContextCompat.getColor(this@CoreActivity, R.color.red)
@@ -196,7 +219,7 @@ class CoreActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_logout -> {
-                showLogoutConfirmationDialog()
+
                 Log.e("TAG", "logout: ")
             }
         }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.SettingsFragment">
+    <RelativeLayout
+        android:id="@+id/edtSettings"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:elevation="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/bg_buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/edtDeleveryImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:src="@drawable/carbon_report" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="3dp"
+            android:layout_toEndOf="@id/edtDeleveryImage"
+            android:src="@drawable/arrow_drop_down"
+            android:popupBackground="@color/white" />
+    </RelativeLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSentOtp"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_edit_radius"
+        android:fontFamily="@font/dmsans_semibold"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:text="Update"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:fontFamily="@font/dmsans_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/edtSettings"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
