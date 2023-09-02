@@ -106,12 +106,12 @@ class CoreActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.nav_menu, menu)
-        val dashboardMenuItem = menu?.findItem(R.id.dashboardFragment)
-        val customView = dashboardMenuItem?.actionView
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.nav_menu, menu)
+//        val dashboardMenuItem = menu?.findItem(R.id.dashboardFragment)
+//        val customView = dashboardMenuItem?.actionView
+//        return true
+//    }
 
     private fun changeToolbarColor() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -123,7 +123,7 @@ class CoreActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
                 R.id.dashboardFragment -> {
                     binding.myToolbar.apply {
-                        setBackgroundColor(ContextCompat.getColor(this@CoreActivity, R.color.red))
+                        setBackgroundColor(ContextCompat.getColor(this@CoreActivity, R.color.brown))
                         binding.tvDashboard.text = "Dashboard"
                     }
                 }
